@@ -1,0 +1,93 @@
+<Panel ux:Class="DetailCommande" Background="White">
+  <Router ux:Dependency="router" />
+  <JavaScript>
+    var Observable = require('FuseJS/Observable');
+    var hikr = this.Parameter;
+    function back(){
+      router.goBack();
+    }
+    module.exports = {
+      back: back,
+      hikr: hikr
+    }
+  </JavaScript>
+  <DockPanel>
+    <StatusBarBackground Dock="Top" />
+    <BottomBarBackground Dock="Bottom" />
+    <Android.StatusBarConfig IsVisible="True" Color="#cc9c00" />
+    <!-- ajoute le apbar tel que vue dans le fichier precement -->
+
+    
+    <Rectangle Dock="Top" Height="50" Width="100%" Fill="#e0ac00">
+      <!-- mettre le sinformations sur le titre -->
+      <Grid Columns="50,1*" CellSpacing="10">
+        <Rectangle Height="100" Width="100%">
+          <Text Value="&#xe317;" Font="Material" FontSize="30" TextAlignment="Center" Alignment="VerticalCenter" />
+          <Clicked>
+            <Callback Handler="{back}" />
+          </Clicked>
+        </Rectangle>
+      <Text Value="Details" TextAlignment="Left" Font="Bold" Alignment="VerticalCenter"/>
+      </Grid>
+    </Rectangle>
+
+    <ScrollView>
+      <StackPanel Margin="10"  >
+
+        <Rectangle Height="50" Width="100%" Dock="Top" Alignment="VerticalCenter" >
+          <Text Value="DETAIL DE VOTRE CHOIX :" Alignment="VerticalCenter" TextColor="#000" />
+        </Rectangle>
+        <Rectangle>         
+          <Grid Columns="30,150,1*" CellSpacing="10">
+            <Text Value="&#xe878;" Font="Material" TextAlignment="Center" Alignment="VerticalCenter" FontSize="20" />
+            <Text Value="Date commande :" TextAlignment="Left" Font="Bold" Alignment="VerticalCenter"/>
+            <Text Value="{hikr.date}" TextAlignment="Right" Font="Bold" Alignment="VerticalCenter"/> 
+          </Grid>
+        </Rectangle>
+        <Divider Margin="10,5" />
+
+        <Rectangle>         
+          <Grid Columns="30,150,1*" CellSpacing="10">
+            <Text Value="&#xf1cc;" Font="Material" TextAlignment="Center" Alignment="VerticalCenter" FontSize="20" />
+            <Text Value="Commande N° :" TextAlignment="Left" Font="Bold" Alignment="VerticalCenter"/>
+            <Text Value="{hikr.id}" TextAlignment="Right" Font="Bold" Alignment="VerticalCenter"/> 
+          </Grid>
+        </Rectangle>
+        <Divider Margin="10,5" />
+
+        <Rectangle>         
+          <Grid Columns="30,150,1*" CellSpacing="10">
+            <Text Value="&#xea3e;" Font="Material" TextAlignment="Center" Alignment="VerticalCenter" FontSize="20" />
+            <Text Value="Désignation :" TextAlignment="Left" Font="Bold" Alignment="VerticalCenter"/>
+            <Text Value="{hikr.date}" TextAlignment="Right" Font="Bold" Alignment="VerticalCenter"/> 
+          </Grid>
+        </Rectangle>
+        <Divider Margin="10,5" />
+
+        <Rectangle>         
+          <Grid Columns="30,150,1*" CellSpacing="10">
+            <Text Value="&#xeaf6;" Font="Material" TextAlignment="Center" Alignment="VerticalCenter" FontSize="20" />
+            <Text Value="Quantité :" TextAlignment="Left" Font="Bold" Alignment="VerticalCenter"/>
+            <Text Value="{hikr.date}" TextAlignment="Right" Font="Bold" Alignment="VerticalCenter"/> 
+          </Grid>
+        </Rectangle>
+        <Divider Margin="10,5" />
+
+        <Rectangle>         
+          <Grid Columns="30,150,1*" CellSpacing="10">
+            <Text Value="&#xe227;" Font="Material" TextAlignment="Center" Alignment="VerticalCenter" FontSize="20" />
+            <Text Value="Prix total :" TextAlignment="Left" Font="Bold" Alignment="VerticalCenter"/>
+            <Text Value="{hikr.total} F" TextAlignment="Right" Font="Bold" Alignment="VerticalCenter"/> 
+          </Grid>
+        </Rectangle>
+        <Divider Margin="10,5" />
+
+        
+        
+
+      </StackPanel>
+    </ScrollView>
+  
+
+  </DockPanel>
+</Panel>

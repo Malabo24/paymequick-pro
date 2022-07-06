@@ -1,0 +1,123 @@
+<Panel ux:Class="Login">
+	<Router ux:Dependency="router" />
+	<JavaScript>
+    var Observable = require("FuseJS/Observable");
+		var Alerts = require("FuseJS/Alerts");
+		var email = Observable("")
+    var password = Observable("")
+    var state = Observable(false)
+
+		// login status
+		var loginStatus = Observable(false)
+
+		// contactons se serveur
+		
+
+    password.onValueChanged(module, function(x){
+      console.log(x)
+			if (x.length == 0 || x == "111111" || x == "123456" || x == "000000"){
+				console.log("ndem")
+			} else {
+				state.value = true;
+			}
+    })
+
+		function suivant(){
+			console.log('click sur suivant login');
+			//router.push("Accueilemploye");
+			//fetch permet de recuperer des données depuis un serveur
+			//l'expression est la suivante
+			//fetch("adresse_url_ou_uri_serveur", {parametres})
+			//notre adresse url est https://google.com
+			// {a: 1, b: 2}
+			loginStatus.value = true;
+			fetch("http://192.168.1.211:3000/api/v2/merchant_app/loginMerchantApp", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json"
+				},
+				body: JSON.stringify({
+					email: email.value,
+					password: password.value
+				})
+			}).then(function(response){
+				if (response.status == 200){
+					return response.json().then(function(data){
+						console.log(JSON.stringify(data));
+						loginStatus.value = false;
+						// on sauvegarde les informations provenant du servueur et on petu continuer
+						localStorage.setItem("token", data.token);
+						// mvondoyannick@gmail.com 
+
+						// on pousse vers l'accueil employé
+						if (data.type == "marchand"){
+							router.push("AdminAccueil", data);
+						} else {
+							router.push("AccueilEmploye", data);
+						}
+					})
+				} else {
+					loginStatus.value = false;
+					console.log("Utilisateur ou mot de passe invalide");
+					Alerts.alert("Erreur", "Utilisateur ou mot de passe invalide, modifier puis réessayer.", "Compris");
+				}
+			})
+			
+		}
+
+		module.exports = {
+			suivant: suivant,
+      email: email,
+      password: password,
+      state: state,
+			loginStatus: loginStatus
+		}
+	</JavaScript>
+
+	<DockPanel>
+		<!-- <StatusBarBackground Dock="Top" /> -->
+		<BottomBarBackground Dock="Bottom" />
+
+		<Image File="Assets/Images/bg.png" StretchMode="UniformToFill" Layer="Background" />
+		<StackPanel Alignment="Bottom" Margin="5">
+			<Circle Size="80" Fill="White" Padding="10" Margin="10,10,10,50">
+				<ImageFill File="Assets/Images/logo.png"  StretchMode="UniformToFill" />	
+			</Circle>
+			
+			<Rectangle Height="330" Width="100%" CornerRadius="5" Fill="#000" Alignment="Bottom">
+
+				<StackPanel ItemSpacing="10" Margin="10,30,10,0">
+					<Text Value="Entrer vos informations d'identifications pour vous connecter" TextColor="White" TextAlignment="Center" Alignment="VerticalCenter" TextWrapping="Wrap" Margin="20,0" />
+          <TextInput PlaceholderText="Adresse Email" InputHint="Email" PlaceholderColor="White" TextColor="White" Padding="10" Value="{email}" >
+            <Rectangle Height="50" Width="100%" CornerRadius="5">
+              <Stroke Width="1" Color="#cc9c00" />
+            </Rectangle>
+          </TextInput>
+
+          <TextInput PlaceholderText="Mot de Passe" InputHint="Number" PlaceholderColor="White" TextColor="White" IsPassword="True" Padding="10" Value="{password}" MaxLength="6" >
+            <Rectangle Height="50" Width="100%" CornerRadius="5">
+              <Stroke Width="1" Color="#cc9c00" />
+            </Rectangle>
+          </TextInput>
+
+          <WhileFalse Value="{loginStatus}">
+						<WhileTrue Value="{state}">
+							<Boutton Titre="se connecter" Clicked="{suivant}" />
+						</WhileTrue>
+						<WhileFalse Value="{state}">
+							<Boutton Margin="-10,0" Titre="Se connecter" Opacity=".5" />
+						</WhileFalse>
+					</WhileFalse>
+
+					<WhileTrue Value="{loginStatus}">
+						<BouttonLoading Margin="-10,0" Titre="connexion en cours ..." Opacity=".5" />
+					</WhileTrue>
+					
+
+					
+					<Text Value="Mot de passe oublié" TextAlignment="Center" Alignment="VerticalCenter" TextColor="White" Opacity=".5" />
+				</StackPanel>
+			</Rectangle>
+		</StackPanel>
+	</DockPanel>
+</Panel>

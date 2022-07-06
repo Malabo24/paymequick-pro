@@ -1,0 +1,120 @@
+<Panel ux:Class="Accueilemploye" Background="White">
+ <Router ux:Dependency="router"/>
+ <Qreader ux:Global="Qreader"/>
+  <JavaScript>
+    var Observable = require('FuseJS/Observable');
+    var qreader = require("Qreader");
+    var lire = Observable("");
+    // variable qui va contenir les informations venants du login
+    var hikr = this.Parameter;
+
+    
+    
+    function DetailCommande(argv){
+      console.log(JSON.stringify(argv.data));
+      router.push("DetailCommande", argv.data);
+    }
+
+    var commandes = [
+      {
+        id: 1,
+        name: "2370234",
+        date: "12/12/2019",
+        total: 2550,
+      },
+      {
+        id: "XKBJKL",
+        name: "2370234A",
+        date: "11/12/2019",
+        total: "3100",
+      },
+      {
+        id: "",
+        name: "",
+        date: "",
+        total: "",
+      },
+      {
+        id: "",
+        name: "",
+        date: "",
+        total: "",
+      },
+      {
+        id: "",
+        name: "",
+        date: "",
+        total: "",
+      },
+    ]
+
+    function charger(){
+      qreader.scan().then(function(res){
+        lire.value = res;
+      });
+    }
+
+    module.exports = {
+      DetailCommande: DetailCommande,
+      commandes: commandes,
+      charger: charger,
+      lire: lire,
+      hikr: hikr
+    };
+
+  </JavaScript>
+
+  <!-- creation de la class d'affichage des commandes des attentes -->
+  <Panel ux:Class="WaitingProduct">
+    <string ux:Property="Title" />
+    <string ux:Property="Date" />
+    <string ux:Property="Total" />
+    <Rectangle Height="80" Width="100%" Fill="#dee2e6" CornerRadius="5">
+      <Grid Columns="50,1*,50" CellSpacing="10">
+        <Image File="../Assets/Images/logo.png" StretchMode="UniformToFill" Size="40" Alignment="VerticalCenter" />
+        <StackPanel Alignment="VerticalCenter" ItemSpacing="5">
+          <Text Value="{Property Title}" Font="Bold" FontSize="18" />
+          <Grid ColumnCount="2">
+            <Text Value="{Property Date}" />
+            <Text Value="{Property Total} F" />
+          </Grid>
+        </StackPanel>
+        <Text Value="&#xe5c8;" Font="Material" FontSize="30" TextAlignment="Right" Alignment="VerticalCenter" Margin="0,0,10,0" />
+      </Grid>
+    </Rectangle>
+  </Panel>
+    
+  <DockPanel>
+    <StatusBarBackground Dock="Top" />
+    <BottomBarBackground Dock="Bottom" />
+    <Android.StatusBarConfig Color="#cc9c00" IsVisible="True" />
+
+    <!-- app bar -->
+    <Rectangle Dock="Top" Height="50" Width="100%" Fill="#e0ac00">
+      <!-- mettre le sinformations sur le titre -->
+      <Grid Columns="50,1*" CellSpacing="10">
+        <Text Value="&#xe5d2;" Font="Material" FontSize="30" TextAlignment="Center" Alignment="VerticalCenter" />
+        <Text Value="PAYMEQUICK PRO" TextAlignment="Left" Font="Bold" Alignment="VerticalCenter"/>
+      </Grid>
+    </Rectangle>
+
+    <ScrollView>
+      <StackPanel Margin="10,0,10,0" ItemSpacing="15">
+        <Rectangle Height="200" Width="100%" Fill="White">
+          <StackPanel Alignment="VerticalCenter">
+            <Text Value="&#xe3c2;" Font="Material" FontSize="80" Alignment="VerticalCenter" TextAlignment="Center" TextColor="#000" />
+            <Text Value="Scanner" TextAlignment="Center" Alignment="Center" />
+            <Clicked>
+              <Callback Handler="{charger}" />
+            </Clicked>
+          </StackPanel>
+        </Rectangle>
+        
+        <Text Value="Commandes en attentes" />
+        <Each Items="{hikr.commandes}">
+          <WaitingProduct Title="{code}" Date="{date_commande}" Total="{amount}" Clicked="{DetailCommande}" />
+        </Each>
+      </StackPanel>
+    </ScrollView>
+  </DockPanel>
+</Panel>

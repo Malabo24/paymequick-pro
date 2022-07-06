@@ -1,0 +1,56 @@
+<Panel ux:Class="FormulaireInscript">
+<Router ux:Dependency="router"/>
+<JavaScript>
+		function prochain(){
+			router.push("Accueil");
+		}
+
+		module.exports = {
+			prochain: prochain;
+		};
+	</JavaScript>
+
+<!-- Corp du FORMULAIRE INSCRIPTION -->
+
+<DockPanel>
+	<StatusBarBackground Dock="Top" />
+	<BottomBarBackground Dock="Bottom" />
+	<Android.StatusBarConfig Color="#ced4da" IsVisible="True" /> 
+
+	<!-- barre des status appBar -->
+		<Rectangle Height="50" Width="100%" Fill="#765214" Dock="Top">
+			<Text Value="Nouveau Compte" TextAlignment="Center" Alignment="VerticalCenter" Color="Black" />
+			<DropShadow />
+		</Rectangle>
+
+		<!-- barre des status appBar Down -->
+		<Rectangle Dock="Bottom" Width="100%" Height="40" Color="#765214" >
+	    <Grid  ColumnCount="3" >
+							<Text Value="|" TextAlignment="Center" Alignment="Center" />
+							<Text Value="|" TextAlignment="Center" Alignment="Center"/>
+							<Text Value="|" TextAlignment="Center" Alignment="Center"/>
+	    </Grid>
+  </Rectangle>
+
+  <!-- corps de lapplication -->
+
+		<ScrollView SnapMinTransform="false">
+			<StackPanel Background="#ced4da">
+					<Image File="Assets/Images/bg.png" StretchMode="UniformToFill" Layer="Background" />
+		     	<Rectangle Height="560" Width="100%" CornerRadius="5" Fill="White" Alignment="Bottom">
+						<Text Value="Entrer vos informations Personnelles" TextAlignment="Center" Alignment="Top" TextWrapping="Wrap" Margin="20,5" />
+						<Formulaire TypeFormulaire="Numero de telephone" TextInformateur="Numero de telephone" Margin="10,0" />
+						<Formulaire TypeFormulaire="Nom" TextInformateur="Nom" Margin="10,0" />
+						<Formulaire  TypeFormulaire="Prenom" TextInformateur="Prenom"  Margin="10,0" />
+						<Formulaire TypeFormulaire="Email" TextInformateur="Adresse Email" Margin="10,0" />
+						<Text Value="Securite et Confidentialite" TextAlignment="Center" Alignment="VerticalCenter" Opacity=".5" TextWrapping="Wrap"/>
+						<Boutton Titre="Enregistrer" Clicked="{prochain}" />
+						<Text Value="......" TextAlignment="Center" Alignment="VerticalCenter" TextWrapping="Wrap" Opacity=".5" />
+					</Rectangle>
+			</StackPanel>
+
+		</ScrollView>
+
+</DockPanel>
+
+</Panel>

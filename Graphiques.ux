@@ -1,0 +1,4 @@
+<Panel ux:Class="Graphiques" xmlns:graphe="Fuse.Charting">
+<Router ux:Dependency="router"/>
+
+</Panel>

@@ -1,0 +1,13 @@
+{
+  "Packages": [
+    "Fuse",
+    "FuseJS",
+    "Fuse.Camera"
+  ],
+  "Projects": [
+    "../fuse-qreader.unoproj"
+  ],
+  "Includes": [
+    "*.ux",
+  ]
+}

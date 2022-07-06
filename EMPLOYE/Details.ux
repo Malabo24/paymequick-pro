@@ -1,0 +1,30 @@
+<Panel ux:Class="Details">
+    <Router ux:Dependency="router"/>
+
+    <DockPanel>
+        <StatusBarBackground Dock="Top" />
+        <BottomBarBackground Dock="Bottom" />
+        <Android.StatusBarConfig IsVisible="True" Color="#cc9c00" />
+
+        <!-- Ajouter le details d'une commande -->
+        <StackPanel Alignment="VerticalCenter" >
+            <Rectangle Height="50" Width="100%" >
+                <Text Value="DETAIL DE VOTRE CHOIX :" />
+            </Rectangle>
+
+             <Rectangle Height="50" Width="100%" >
+                <Text Value=":" />
+            </Rectangle>
+
+        </StackPanel>
+
+
+
+
+
+
+
+
+
+    </DockPanel>
+</Panel>

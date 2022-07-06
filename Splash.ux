@@ -1,0 +1,22 @@
+<Panel ux:Class="Splash" Background="#000">
+  <Router ux:Dependency="router" />
+  <JavaScript>
+    var Timer = require("FuseJS/Timer");
+    Timer.create(function(){
+      router.goto("Login");
+    }, 3000, false);
+  </JavaScript>
+  <DockPanel>
+    <Android.StatusBarConfig IsVisible="true" Color="#000" />
+    <Text Value="By PAYMEQUICK" TextAlignment="Center" Alignment="VerticalCenter" FontSize="14" Dock="Bottom" TextColor="White" Margin="0,0,0,10" />
+    <ScrollView>
+      <StackPanel Alignment="VerticalCenter">
+        <Circle Size="100" Fill="White" >
+          <ImageFill File="Assets/Images/logo.png" />
+          <Stroke Width="1" Color="Black" />
+          <DropShadow />
+        </Circle>
+      </StackPanel>
+    </ScrollView>
+  </DockPanel>
+</Panel>

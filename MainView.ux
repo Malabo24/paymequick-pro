@@ -1,0 +1,66 @@
+<App>
+	<Router ux:Name="router" />
+	<!-- integration des polices -->
+	<Font File="Assets/Fonts/MaterialIcons-Regular.ttf" ux:Global="Material" />
+
+	<!-- objects personnels -->
+<Panel ux:Class="Divider" >
+	<Rectangle Height="1" Margin="0,5" Opacity=".2" Width="100%" Fill="#000" />
+</Panel>
+
+	<!-- creation d'un bouton -->
+	<Panel ux:Class="Boutton">
+		<string ux:Property="Titre" />
+		<Rectangle Width="100%" Height="50" Fill="#FFF" Margin="10,0" CornerRadius="5">
+			<Text Value="{Property Titre}" TextColor="#000" TextAlignment="Center" Alignment="VerticalCenter" />
+			<!-- <Stroke Width="1" Color="#fff" /> -->
+		</Rectangle>
+	</Panel>
+	<!-- fin de creation du bouton -->
+
+	<!-- creation d'un  bouton de chargement -->
+	<Panel ux:Class="BouttonLoading">
+		<string ux:Property="Titre" />
+		<Rectangle Width="100%" Height="50" Fill="#000" Margin="10,0" CornerRadius="5">
+			<Grid Columns="1*,50" CellSpacing="5">
+				<Text Value="{Property Titre}" TextColor="White" TextAlignment="Center" Alignment="VerticalCenter" />
+				<Circle ux:Name="RotatingStroke" Width="30" Height="30" StartAngleDegrees="-40" EndAngleDegrees="45" Alignment="VerticalCenter">
+					<Stroke Width="2" Color="#cc9c00" />
+				</Circle>
+			</Grid>
+			<Stroke Width="1" Color="#fff" />
+		</Rectangle>
+		<WhileVisible>
+			<Spin Target="RotatingStroke" Frequency="1" />
+		</WhileVisible>
+	</Panel>
+
+	<!-- Creation formulaire -->
+	<Panel ux:Class="Formulaire">
+		<string ux:Property="TextInformateur" />
+		<string ux:Property="TypeFormulaire" />
+		<bool ux:Property="EstUnMotDePasse" />
+		<TextInput PlaceholderText="{Property TextInformateur}" InputHint="{Property TypeFormulaire}" IsPassword="{Property EstUnMotDePasse}" Padding="10" >
+			<Rectangle Height="50" Width="100%" CornerRadius="5">
+				<Stroke Width="1" Color="Red" />
+			</Rectangle>
+		</TextInput>
+	</Panel>
+
+	<Navigator DefaultPath="Splash">
+		<Splash ux:Template="Splash" router="router" />
+		<Login ux:Template="Login" router="router" />
+		<FormulaireInscript ux:Template="FormulaireInscript" router="router"/>
+		<Acceuil ux:Template="Acceuil" router="router" />
+		<Graphiques ux:Template="Graphiques" router="router"/>
+		<!-- employe -->
+		<Accueilemploye ux:Template="Accueilemploye" router="router" />
+		<DetailCommande ux:Template="DetailCommande" router="router" />
+		<!-- Details -->
+
+		<!-- admin -->
+			<AdminAccueil ux:Template="AdminAccueil" router="router" />
+		<!-- end admin -->
+		<Details ux:Template="Details" router="router"/>
+	</Navigator>
+</App>

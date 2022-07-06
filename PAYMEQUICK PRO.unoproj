@@ -1,0 +1,15 @@
+{
+  "Packages": [
+    "Fuse",
+    "FuseJS",
+    "Fuse.Charting",
+    "Fuse.Alerts",
+  ],
+  "Includes": [
+    "*"
+  ],
+  "Projects": [
+    "Assets/src/qrcode/fuse-qreader.unoproj"
+  ],
+}
+

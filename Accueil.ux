@@ -1,0 +1,101 @@
+<Panel ux:Class="Acceuil">
+	<Router ux:Dependency="router" />
+	 
+
+	<DockPanel>
+		<StatusBarBackground Dock="Top" />
+		<BottomBarBackground Dock="Bottom" />
+		<Android.StatusBarConfig Color="#ced4da" IsVisible="True" /> 
+
+		<!-- barre des status appBar -->
+		<Rectangle Height="50" Width="100%" Fill="#765214" Dock="Top">
+			<Text Value="PAYMEQUICK PRO" TextAlignment="Center" Alignment="VerticalCenter" Color="Black" />
+			<DropShadow />
+		</Rectangle>
+
+		<!-- barre des status appBar Down -->
+		<Rectangle Dock="Bottom" Width="100%" Height="40" Color="#765214" >
+	    <Grid  ColumnCount="3" >
+		<Text Value="|" TextAlignment="Center" Alignment="Center" />
+		<Text Value="|" TextAlignment="Center" Alignment="Center"/>
+		<Text Value="|" TextAlignment="Center" Alignment="Center"/>
+	    </Grid>
+    </Rectangle>
+
+		<!-- corps de l'application -->
+		<ScrollView SnapMinTransform="false">
+			<StackPanel Background="#ced4da">
+				<Rectangle Height="250" Width="100%" >
+					<PageControl Active="Index">
+						<!-- <Page Background="#ced4da" ux:Name="Voila" /> -->
+						<Page Background="#d6ce93" ux:Name="Index" >
+							<Image Layer="Background" File="Assets/Images/pic.jpg" StretchMode="UniformToFill" />
+							<StackPanel ItemSpacing="10" Alignment="VerticalCenter" >
+								<Text TextColor="White" Value="Votre solde Aujourd'hui" TextAlignment="Center" Alignment="VerticalCenter" />
+								<Text Value="50.000F" Font="Bold" FontSize="30" TextColor="White" TextAlignment="Center" Alignment="VerticalCenter" />
+							</StackPanel>
+						</Page>
+						<Page Background="#5e548e" />
+
+					</PageControl>
+									</Rectangle>
+
+									<!-- MENU -->
+    
+				<Rectangle Height="50" Width="100%"  Dock="Top" CornerRadius="5" Margin="7,5">
+			   <Grid  ColumnCount="4"  >
+			   <Rectangle Height="45" Width="100%" Fill="#a9def9" Margin="7,5"  StrokeWidth="3" StrokeColor="Black" CornerRadius="5">
+			   		<Text  Font="Bold" TextAlignment="Right" Alignment="CenterRight" FontSize="15" TextColor="White"/>
+			   		<!-- <Image File="Assets/Icons/ScanQR.png" Size="30" Alignment="Left" StretchMode="UniformToFill"/> -->
+			   		<Text Value="&#xef6b;" Font="Material" TextColor="Red" FontSize="30" TextAlignment="Center" Alignment="VerticalCenter" />
+			   </Rectangle>
+			   		
+			   <Rectangle Height="45" Width="100%" Margin="7,5" Fill="#0077b6" StrokeWidth="3" StrokeColor="Black" CornerRadius="5">
+			   		<Text  Font="Bold" TextAlignment="Right" Alignment="CenterRight" FontSize="15" TextColor="White"/>
+			   		<Image File="Assets/Icons/Pay.png" Size="30" Alignment="Left" StretchMode="UniformToFill"/>
+			   </Rectangle>
+
+						<Rectangle Height="45" Width="100%" Fill="#588157" Margin="7,5" StrokeWidth="3" StrokeColor="Black" CornerRadius="5">
+			   		<Text  Font="Bold" TextAlignment="Right" TextWrapping="Wrap" Alignment="CenterRight" FontSize="15" TextColor="White"/>
+			   		<Image File="Assets/Icons/CompteBalance.png" Size="30" Alignment="Left" StretchMode="UniformToFill"/>
+			   </Rectangle>
+
+			   <Rectangle Height="45" Width="100%" Fill="#ffcdb2" Margin="7,5" StrokeWidth="3" StrokeColor="Black" CornerRadius="5">
+			   		<Text  Font="Bold" TextAlignment="Right" TextWrapping="Wrap" Alignment="CenterRight" FontSize="15" TextColor="White"/>
+			   		<Image File="Assets/Icons/History.png" Size="30" Alignment="Left" StretchMode="UniformToFill"/>
+			   </Rectangle>
+																
+	    </Grid>
+			 <DropShadow />
+		 </Rectangle>
+
+									<!-- FIN MENU -->
+				<StackPanel ItemSpacing="10" Alignment="VerticalCenter" Margin="10,10">
+					<Rectangle Height="45" Width="100%" CornerRadius="5" Fill="White" Alignment="Top">
+						<Text Value="MA BOUTIQUE A" Font="Bold" FontSize="15" TextColor="#343a40" TextAlignment="Left" Alignment="VerticalCenter" Margin="30,0" />
+						<Image File="Assets/Icons/arrow_forward.png" Size="25" Alignment="Right"/>
+						<Image File="Assets/Icons/store.png" Size="25" Alignment="Left"/>
+					</Rectangle>
+					<Rectangle Height="45" Width="100%" CornerRadius="5" Fill="White" Alignment="Top">
+						<Text Value="MA BOUTIQUE B" Font="Bold" FontSize="15" TextColor="#343a40" TextAlignment="Left" Alignment="VerticalCenter" Margin="30,0" />
+						<Image File="Assets/Icons/arrow_forward.png" Size="25" Alignment="Right"/>
+						<Image File="Assets/Icons/store.png" Size="25" Alignment="Left"/>
+					</Rectangle>
+					<Rectangle Height="45" Width="100%" CornerRadius="5" Fill="White" Alignment="Top">
+						<Text Value="MA BOUTIQUE C" Font="Bold" FontSize="15" TextColor="#343a40" TextAlignment="Left" Alignment="VerticalCenter" Margin="30,0" />
+						<Image File="Assets/Icons/arrow_forward.png" Size="25" Alignment="Right"/>
+						<Image File="Assets/Icons/store.png" Size="25" Alignment="Left"/>
+					</Rectangle>
+					<Rectangle Height="45" Width="100%" CornerRadius="5" Fill="White" Alignment="Top">
+						<Text Value="MA BOUTIQUE D" Font="Bold" FontSize="15" TextColor="#343a40" TextAlignment="Left" Alignment="VerticalCenter" Margin="30,0"/>
+						<Image File="Assets/Icons/arrow_forward.png" Size="25" Alignment="Right"/>
+						<Image File="Assets/Icons/store.png" Size="25" Alignment="Left"/>
+					</Rectangle>
+
+				</StackPanel>
+			</StackPanel>
+		</ScrollView>
+
+		<!-- Fin du corps de l'application -->
+	</DockPanel>
+</Panel>

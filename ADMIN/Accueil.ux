@@ -1,0 +1,63 @@
+<Panel ux:Class="AdminAccueil" Background="White">
+  <Router ux:Dependency="router" />
+  <JavaScript>
+    var hikr = this.Parameter;
+
+    module.exports = {
+      hikr: hikr
+    }
+  </JavaScript>
+  <DockPanel>
+    <StatusBarBackground Dock="Top" />
+    <Android.StatusBarConfig IsVisible="True" Color="#000" />
+    <Rectangle Height="50" Width="100%" Fill="#000" Dock="Top">
+      <Text Value="PAYMEQUICK PRO" TextAlignment="Center" Alignment="VerticalCenter" Font="Bold" TextColor="White" />
+    </Rectangle>
+
+    <ScrollView>
+      <StackPanel>
+        <Rectangle Height="150" Width="100%" Fill="#000" Margin="5" CornerRadius="10" >
+          <StackPanel ItemSpacing="10" Alignment="VerticalCenter">
+            <Text Value="SOLDE" TextColor="White" TextAlignment="Center" Alignment="VerticalCenter" />
+            <Text Value="{hikr.solde}" TextAlignment="Center" Alignment="VerticalCenter" Font="Bold" TextColor="White" />
+          </StackPanel>
+        </Rectangle>
+        <Rectangle Height="200" Width="100%" Margin="5" CornerRadius="10" Fill="#000">
+          <StackPanel ItemSpacing="10" Alignment="VerticalCenter" Margin="10,0">
+            <Text Value="Mes points" TextColor="White" TextAlignment="Left"  Alignment="VerticalCenter" />
+            <ScrollView AllowedScrollDirections="Horizontal">
+              <StackPanel Orientation="Horizontal" ItemSpacing="5">
+                <Each Count="5">
+                  <Rectangle Size="110" CornerRadius="5" Fill="White">
+
+                  </Rectangle>
+                  <Text Name="Hello" TextColor="White" />
+                </Each>
+              </StackPanel>
+            </ScrollView>
+            <!-- <Text Value="vide" TextAlignment="Center" Alignment="VerticalCenter" Font="Bold" TextColor="White" /> -->
+          </StackPanel>
+        </Rectangle>
+        <Rectangle Height="300" Width="100%" Fill="#000" CornerRadius="10" Margin="5">
+          <StackPanel Margin="10" ItemSpacing="10">
+            <Text Value="Mes commandes en attentes" TextColor="White" Margin="0,10" />
+            <Each Items="{hikr.commandes}" Count="4">
+              <Panel>
+                <Rectangle Height="50" CornerRadius="10" Width="100%" Fill="White">
+                  <Grid Columns="50,1*,50" CellSpacing="5">
+                    <Circle Size="35" Fill="Red" />
+                    <StackPanel Alignment="VerticalCenter" >
+                      <Text Value="{amount}" Font="Bold" />
+                      <Text Value="{date_commande}" Font="Bold" />
+                    </StackPanel>
+                    <Text Value="&#xe5c8;" Font="Material" TextAlignment="Center" Alignment="VerticalCenter" FontSize="25" />
+                  </Grid>
+                </Rectangle>
+              </Panel>
+            </Each>
+          </StackPanel>
+        </Rectangle>
+      </StackPanel>
+    </ScrollView>
+  </DockPanel>
+</Panel>
