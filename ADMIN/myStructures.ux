@@ -1,0 +1,3 @@
+<Panel ux:Class="MyStructures">
+  <Router ux:Dependency="router" />
+</Panel>

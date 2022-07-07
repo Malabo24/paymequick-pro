@@ -1,0 +1,3 @@
+<Panel ux:Class="MyUserAccounts">
+  <Router ux:Dependency="router" />
+</Panel>

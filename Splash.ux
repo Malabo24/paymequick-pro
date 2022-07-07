@@ -2,8 +2,20 @@
   <Router ux:Dependency="router" />
   <JavaScript>
     var Timer = require("FuseJS/Timer");
+    
     Timer.create(function(){
-      router.goto("Login");
+      if (localStorage.getItem('token') !== null || localStorage.getItem('token') !== undefined) {
+        if (localStorage.getItem('user_type') == "marchand"){
+          router.goto("AdminAccueil");
+        } else if (localStorage.getItem('user_type') == "employe") {
+          router.goto("Accueilemploye");
+        } else {
+          router.goto("Login");
+        }
+      } else {
+        router.goto("Login");
+      }
+      
     }, 3000, false);
   </JavaScript>
   <DockPanel>

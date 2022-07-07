@@ -31,7 +31,7 @@
 			//notre adresse url est https://google.com
 			// {a: 1, b: 2}
 			loginStatus.value = true;
-			fetch("http://192.168.1.211:3000/api/v2/merchant_app/loginMerchantApp", {
+			fetch("https://payquick-develop.herokuapp.com/api/v2/merchant_app/loginMerchantApp", {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json"
@@ -47,6 +47,7 @@
 						loginStatus.value = false;
 						// on sauvegarde les informations provenant du servueur et on petu continuer
 						localStorage.setItem("token", data.token);
+						localStorage.setItem("user_type", data.type);
 						// mvondoyannick@gmail.com 
 
 						// on pousse vers l'accueil employé
@@ -75,8 +76,10 @@
 	</JavaScript>
 
 	<DockPanel>
-		<!-- <StatusBarBackground Dock="Top" /> -->
+		<StatusBarBackground Dock="Top" />
 		<BottomBarBackground Dock="Bottom" />
+		<Text Value="PAYMEQUICK PRO" TextAlignment="Center" Alignment="TopCenter" TextColor="White" Margin="0,5,0,0" />
+
 
 		<Image File="Assets/Images/bg.png" StretchMode="UniformToFill" Layer="Background" />
 		<StackPanel Alignment="Bottom" Margin="5">

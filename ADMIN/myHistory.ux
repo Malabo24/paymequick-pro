@@ -1,0 +1,3 @@
+<Panel ux:Class="MyHistory">
+  <Router ux:Dependency="router" />
+</Panel>

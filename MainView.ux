@@ -8,6 +8,15 @@
 	<Rectangle Height="1" Margin="0,5" Opacity=".2" Width="100%" Fill="#000" />
 </Panel>
 
+<!-- creation d'un bouton noir -->
+<Panel ux:Class="BouttonBlack">
+		<string ux:Property="Titre" />
+		<Rectangle Width="100%" Height="50" Fill="#000" Margin="10,0" CornerRadius="5">
+			<Text Value="{Property Titre}" TextColor="#fff" TextAlignment="Center" Alignment="VerticalCenter" />
+			<!-- <Stroke Width="1" Color="#fff" /> -->
+		</Rectangle>
+	</Panel>
+
 	<!-- creation d'un bouton -->
 	<Panel ux:Class="Boutton">
 		<string ux:Property="Titre" />
@@ -60,6 +69,7 @@
 
 		<!-- admin -->
 			<AdminAccueil ux:Template="AdminAccueil" router="router" />
+			<DetailsCommandes ux:Template="DetailsCommandes" router="router" />
 		<!-- end admin -->
 		<Details ux:Template="Details" router="router"/>
 	</Navigator>

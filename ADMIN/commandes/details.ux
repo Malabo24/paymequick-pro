@@ -1,0 +1,139 @@
+<Panel ux:Class="DetailsCommandes" Background="White">
+  <Router ux:Dependency="router" />
+  <JavaScript>
+    var Observable = require("FuseJS/Observable");
+    var hikr = this.Parameter;
+
+    function back(){
+      router.goBack();
+    }
+
+    module.exports = {
+      hikr: hikr,
+      back: back
+    }
+  </JavaScript>
+
+  <DockPanel>
+    <StatusBarBackground Dock="Top" />
+    <BottomBarBackground Dock="Bottom" />
+    <Android.StatusBarConfig IsVisible="true" Color="#0001" />
+    <Rectangle Height="50" Width="100%" Fill="White" Dock="Top">
+      <Grid Columns="50,1*" CellSpacing="5">
+        <Panel>
+          <Text Value="&#xe5c4;" Font="Material" TextAlignment="Center" Alignment="VerticalCenter" FontSize="25" />
+          <Clicked>
+            <Callback Handler="{back}" />
+          </Clicked>
+        </Panel>
+        <Text Value="Details commande N°" TextAlignment="Left" Alignment="VerticalCenter" FontSize="20" />
+      </Grid>
+      <DropShadow />
+    </Rectangle>
+
+    <!-- Notification before confirmation -->
+    <Panel ux:Name="confirmationDock" Visibility="Collapsed">
+      <Rectangle Height="420" Width="100%" Alignment="Bottom" Fill="White" Margin="0,0,0,0" CornerRadius="5">
+        <StackPanel Margin="10,10,10,10">
+          <Text Value="En confirmant cette commande, le client recevra un SMS de confirmation lui indiquant que sa commande est disponible." Margin="20,0" TextAlignment="Center" FontSize="15" TextWrapping="Wrap" />
+          <Divider Margin="10,10" Opacity=".3" />
+
+          <Grid Columns="50,1*" CellSpacing="5">
+            <Text Value="&#xe87c;" Font="Material" TextAlignment="Center" Alignment="VerticalCenter" FontSize="35" />
+            <StackPanel>
+              <Text Value="{hikr.client}" TextAlignment="Left" Alignment="VerticalCenter" />
+              <Text Value="Client ayant passé la commande" FontSize="13" Opacity=".5" />
+            </StackPanel>
+          </Grid>
+          <Divider Margin="10,10" Opacity=".3" />
+
+          <Grid Columns="50,1*" CellSpacing="5">
+            <Text Value="&#xe84f;" Font="Material" TextAlignment="Center" Alignment="VerticalCenter" FontSize="35" />
+            <StackPanel>
+              <Text Value="{hikr.amount}" TextAlignment="Left" Alignment="VerticalCenter" />
+              <Text Value="Montant de la commande" FontSize="13" Opacity=".5" />
+            </StackPanel>
+          </Grid>
+          <Divider Margin="10,10" Opacity=".3" />
+
+          <Grid Columns="50,1*" CellSpacing="5">
+            <Text Value="&#xe8d1;" Font="Material" TextAlignment="Center" Alignment="VerticalCenter" FontSize="35" />
+            <StackPanel>
+              <Text Value="{hikr.entreprise}" TextAlignment="Left" Alignment="VerticalCenter" />
+              <Text Value="Point de vente/achat" FontSize="13" Opacity=".5" />
+            </StackPanel>
+          </Grid>
+          <Divider Margin="10,10" Opacity=".3" />
+
+          <Grid Columns="50,1*" CellSpacing="5">
+            <Text Value="&#xe878;" Font="Material" TextAlignment="Center" Alignment="VerticalCenter" FontSize="35" />
+            <StackPanel>
+              <Text Value="{hikr.date_commande}" TextAlignment="Left" Alignment="VerticalCenter" />
+              <Text Value="Date transaction achat" FontSize="13" Opacity=".5" />
+            </StackPanel>
+          </Grid>
+          <Divider Margin="10,10" Opacity=".3" />
+          <BouttonBlack Titre="Confirmer" Margin="0,0,0,0" />
+        </StackPanel>
+        <DropShadow />
+      </Rectangle>
+    </Panel>
+
+    <Rectangle Height="100%" Width="100%" Fill="#0009" Visibility="Collapsed" ux:Name="bgFillDetail">
+      <Clicked>
+        <Hide TargetNode="confirmationDock" />
+        <Hide TargetNode="bgFillDetail" />
+      </Clicked>
+    </Rectangle>
+
+    <BouttonBlack Titre="Confirmer cette commande" Alignment="Bottom" Margin="0,10">
+      <Clicked>
+        <Show TargetNode="confirmationDock" />
+        <Show TargetNode="bgFillDetail" />
+      </Clicked>
+    </BouttonBlack>
+
+    <ScrollView>
+      <StackPanel Margin="10,10,10,10">
+        <Text Value="Information sur la commande N°SSSSS." Margin="20,0" TextAlignment="Center" FontSize="15" TextWrapping="Wrap" />
+        <Divider Margin="10,10" Opacity=".3" />
+
+        <Grid Columns="50,1*" CellSpacing="5">
+          <Text Value="&#xe87c;" Font="Material" TextAlignment="Center" Alignment="VerticalCenter" FontSize="35" />
+          <StackPanel>
+            <Text Value="{hikr.client}" TextAlignment="Left" Alignment="VerticalCenter" />
+            <Text Value="Client ayant passé la commande" FontSize="13" Opacity=".5" />
+          </StackPanel>
+        </Grid>
+        <Divider Margin="10,10" Opacity=".3" />
+
+        <Grid Columns="50,1*" CellSpacing="5">
+          <Text Value="&#xe84f;" Font="Material" TextAlignment="Center" Alignment="VerticalCenter" FontSize="35" />
+          <StackPanel>
+            <Text Value="{hikr.amount}" TextAlignment="Left" Alignment="VerticalCenter" />
+            <Text Value="Montant de la commande" FontSize="13" Opacity=".5" />
+          </StackPanel>
+        </Grid>
+        <Divider Margin="10,10" Opacity=".3" />
+
+        <Grid Columns="50,1*" CellSpacing="5">
+          <Text Value="&#xe8d1;" Font="Material" TextAlignment="Center" Alignment="VerticalCenter" FontSize="35" />
+          <StackPanel>
+            <Text Value="{hikr.entreprise}" TextAlignment="Left" Alignment="VerticalCenter" />
+            <Text Value="Point de vente/achat" FontSize="13" Opacity=".5" />
+          </StackPanel>
+        </Grid>
+        <Divider Margin="10,10" Opacity=".3" />
+
+        <Grid Columns="50,1*" CellSpacing="5">
+          <Text Value="&#xe878;" Font="Material" TextAlignment="Center" Alignment="VerticalCenter" FontSize="35" />
+          <StackPanel>
+            <Text Value="{hikr.date_commande}" TextAlignment="Left" Alignment="VerticalCenter" />
+            <Text Value="Date transaction achat" FontSize="13" Opacity=".5" />
+          </StackPanel>
+        </Grid>
+        <Divider Margin="10,10" Opacity=".3" />
+      </StackPanel>
+    </ScrollView>
+  </DockPanel>
+</Panel>

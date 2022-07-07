@@ -1,0 +1,3 @@
+<Panel ux:Class="MyStatistics">
+  <Router ux:Dependency="router" />
+</Panel>
