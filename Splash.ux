@@ -24,7 +24,7 @@
     <ScrollView>
       <StackPanel Alignment="VerticalCenter">
         <Circle Size="100" Fill="White" >
-          <ImageFill File="Assets/Images/logo.png" />
+          <ImageFill File="Assets/Images/pro.png" />
           <Stroke Width="1" Color="Black" />
           <DropShadow />
         </Circle>

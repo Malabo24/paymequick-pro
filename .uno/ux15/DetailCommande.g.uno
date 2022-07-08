@@ -7,11 +7,11 @@ public partial class DetailCommande: Fuse.Controls.Panel
     global::Uno.UX.Property<string> temp2_Value_inst;
     global::Uno.UX.Property<string> temp3_Value_inst;
     global::Uno.UX.Property<string> temp4_Value_inst;
-    internal global::Fuse.Reactive.EventBinding temp_eb7;
+    internal global::Fuse.Reactive.EventBinding temp_eb8;
     global::Uno.UX.NameTable __g_nametable;
     static string[] __g_static_nametable = new string[] {
         "router",
-        "temp_eb7"
+        "temp_eb8"
     };
     static DetailCommande()
     {
@@ -61,7 +61,7 @@ public partial class DetailCommande: Fuse.Controls.Panel
         var temp27 = new global::Fuse.Controls.Text();
         var temp28 = new global::Fuse.Gestures.Clicked();
         var temp29 = new global::Fuse.Triggers.Actions.Callback();
-        temp_eb7 = new global::Fuse.Reactive.EventBinding(temp5);
+        temp_eb8 = new global::Fuse.Reactive.EventBinding(temp5);
         var temp30 = new global::Fuse.Controls.Text();
         var temp31 = new global::Fuse.Drawing.StaticSolidColor(float4(0.8784314f, 0.6745098f, 0f, 1f));
         var temp32 = new global::Fuse.Controls.ScrollView();
@@ -151,10 +151,10 @@ public partial class DetailCommande: Fuse.Controls.Panel
         temp28.SourceLineNumber = 26;
         temp28.SourceFileName = "EMPLOYE/command_detail.ux";
         temp28.Actions.Add(temp29);
-        temp28.Bindings.Add(temp_eb7);
+        temp28.Bindings.Add(temp_eb8);
         temp29.SourceLineNumber = 27;
         temp29.SourceFileName = "EMPLOYE/command_detail.ux";
-        temp29.Handler += temp_eb7.OnEvent;
+        temp29.Handler += temp_eb8.OnEvent;
         temp5.SourceLineNumber = 27;
         temp5.SourceFileName = "EMPLOYE/command_detail.ux";
         temp30.Value = "Details";
@@ -378,7 +378,7 @@ public partial class DetailCommande: Fuse.Controls.Panel
         temp65.SourceFileName = "EMPLOYE/command_detail.ux";
         __g_nametable.This = this;
         __g_nametable.Objects.Add(router);
-        __g_nametable.Objects.Add(temp_eb7);
+        __g_nametable.Objects.Add(temp_eb8);
         this.Background = Fuse.Drawing.Brushes.White;
         this.Children.Add(temp19);
         this.Children.Add(temp20);

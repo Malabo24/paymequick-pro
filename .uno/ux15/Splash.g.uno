@@ -69,7 +69,7 @@ public partial class Splash: Fuse.Controls.Panel
         temp6.Fills.Add(temp7);
         temp6.Strokes.Add(temp8);
         temp6.Children.Add(temp9);
-        temp7.File = new global::Uno.UX.BundleFileSource(import("../../Assets/Images/logo.png"));
+        temp7.File = new global::Uno.UX.BundleFileSource(import("../../Assets/Images/pro.png"));
         temp8.Color = Fuse.Drawing.Colors.Black;
         temp8.Width = 1f;
         temp9.SourceLineNumber = 29;

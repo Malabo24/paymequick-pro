@@ -6,10 +6,43 @@
     "Fuse.Alerts",
   ],
   "Includes": [
-    "*"
+    "*",
+    "*.ux",
+    "Assets/Images/*.png:Bundle",
+    "MainView.ux:UXFile",
   ],
   "Projects": [
     "Assets/src/qrcode/fuse-qreader.unoproj"
   ],
+  "Title": "PAYMEQUICK PRO",
+  "Description": "An app that bring payment innovations without any constraint or any bank or card.",
+  "Copyright": "Copyright © 2018-2022 PAYMEQUICK Ltd",
+  "Publisher": "PAYMEQUICK Ltd",
+  "Version": "0.0.1",
+  "Mobile": {
+    "UriScheme": "pro",
+    "KeepAlive": false,
+    "ShowStatusbar": true,
+    "RunsInBackground": true,
+    "Orientations": "Portrait"
+  },
+  "Android": {
+    "ApplicationLabel": "PAYMEQUICK PRO",
+    "VersionCode": "1",
+    "VersionName": "0.0.1.alfa.1",
+    "Package": "com.paymequick.pro",
+    "PreviewPackage": "com.paymequick.pro.preview",
+    "Geo": {
+      "ApiKey": "AIzaSyBwq-j0UKNNMQRu-S3uMuuiDboYhMlTnGc"
+    },
+    "Icons": {
+      "LDPI": "Assets/Images/logo/36.jpg",
+      "MDPI": "Assets/Images/logo/48.jpg",
+      "HDPI": "Assets/Images/logo/72.jpg",
+      "XHDPI": "Assets/Images/logo/96.jpg",
+      "XXHDPI": "Assets/Images/logo/144.jpg",
+      "XXXHDPI": "Assets/Images/logo/192.jpg",
+    }
+  },
 }
 

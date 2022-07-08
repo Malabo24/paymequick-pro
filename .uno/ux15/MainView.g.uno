@@ -18,7 +18,7 @@ public partial class MainView: Fuse.App
         {
             var __self = new global::Splash(__parent.router);
             __self.Name = __selector0;
-            __self.SourceLineNumber = 60;
+            __self.SourceLineNumber = 71;
             __self.SourceFileName = "MainView.ux";
             return __self;
         }
@@ -41,7 +41,7 @@ public partial class MainView: Fuse.App
         {
             var __self = new global::Login(__parent.router);
             __self.Name = __selector0;
-            __self.SourceLineNumber = 61;
+            __self.SourceLineNumber = 72;
             __self.SourceFileName = "MainView.ux";
             return __self;
         }
@@ -64,7 +64,7 @@ public partial class MainView: Fuse.App
         {
             var __self = new global::FormulaireInscript(__parent.router);
             __self.Name = __selector0;
-            __self.SourceLineNumber = 62;
+            __self.SourceLineNumber = 73;
             __self.SourceFileName = "MainView.ux";
             return __self;
         }
@@ -87,7 +87,7 @@ public partial class MainView: Fuse.App
         {
             var __self = new global::Acceuil(__parent.router);
             __self.Name = __selector0;
-            __self.SourceLineNumber = 63;
+            __self.SourceLineNumber = 74;
             __self.SourceFileName = "MainView.ux";
             return __self;
         }
@@ -110,7 +110,7 @@ public partial class MainView: Fuse.App
         {
             var __self = new global::Graphiques(__parent.router);
             __self.Name = __selector0;
-            __self.SourceLineNumber = 64;
+            __self.SourceLineNumber = 75;
             __self.SourceFileName = "MainView.ux";
             return __self;
         }
@@ -133,7 +133,7 @@ public partial class MainView: Fuse.App
         {
             var __self = new global::Accueilemploye(__parent.router);
             __self.Name = __selector0;
-            __self.SourceLineNumber = 66;
+            __self.SourceLineNumber = 77;
             __self.SourceFileName = "MainView.ux";
             return __self;
         }
@@ -156,7 +156,7 @@ public partial class MainView: Fuse.App
         {
             var __self = new global::DetailCommande(__parent.router);
             __self.Name = __selector0;
-            __self.SourceLineNumber = 67;
+            __self.SourceLineNumber = 78;
             __self.SourceFileName = "MainView.ux";
             return __self;
         }
@@ -179,7 +179,7 @@ public partial class MainView: Fuse.App
         {
             var __self = new global::AdminAccueil(__parent.router);
             __self.Name = __selector0;
-            __self.SourceLineNumber = 71;
+            __self.SourceLineNumber = 82;
             __self.SourceFileName = "MainView.ux";
             return __self;
         }
@@ -202,7 +202,7 @@ public partial class MainView: Fuse.App
         {
             var __self = new global::DetailsCommandes(__parent.router);
             __self.Name = __selector0;
-            __self.SourceLineNumber = 72;
+            __self.SourceLineNumber = 83;
             __self.SourceFileName = "MainView.ux";
             return __self;
         }
@@ -225,7 +225,7 @@ public partial class MainView: Fuse.App
         {
             var __self = new global::Details(__parent.router);
             __self.Name = __selector0;
-            __self.SourceLineNumber = 74;
+            __self.SourceLineNumber = 85;
             __self.SourceFileName = "MainView.ux";
             return __self;
         }
@@ -421,7 +421,7 @@ public partial class MainView: Fuse.App
         router.SourceLineNumber = 2;
         router.SourceFileName = "MainView.ux";
         temp.DefaultPath = "Splash";
-        temp.SourceLineNumber = 59;
+        temp.SourceLineNumber = 70;
         temp.SourceFileName = "MainView.ux";
         temp.Templates.Add(Splash);
         temp.Templates.Add(Login);

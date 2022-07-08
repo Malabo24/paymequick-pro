@@ -15,7 +15,7 @@ public partial class Accueilemploye: Fuse.Controls.Panel
         global::Uno.UX.Property<string> __self_Title_inst;
         global::Uno.UX.Property<string> __self_Date_inst;
         global::Uno.UX.Property<string> __self_Total_inst;
-        internal global::Fuse.Reactive.EventBinding temp_eb6;
+        internal global::Fuse.Reactive.EventBinding temp_eb7;
         static Template()
         {
         }
@@ -32,10 +32,10 @@ public partial class Accueilemploye: Fuse.Controls.Panel
             var temp4 = new global::Fuse.Reactive.DataBinding(__self_Title_inst, temp, Fuse.Reactive.BindingMode.Default);
             var temp5 = new global::Fuse.Reactive.DataBinding(__self_Date_inst, temp1, Fuse.Reactive.BindingMode.Default);
             var temp6 = new global::Fuse.Reactive.DataBinding(__self_Total_inst, temp2, Fuse.Reactive.BindingMode.Default);
-            temp_eb6 = new global::Fuse.Reactive.EventBinding(temp3);
+            temp_eb7 = new global::Fuse.Reactive.EventBinding(temp3);
             __self.SourceLineNumber = 115;
             __self.SourceFileName = "EMPLOYE/Accueil.ux";
-            global::Fuse.Gestures.Clicked.AddHandler(__self, temp_eb6.OnEvent);
+            global::Fuse.Gestures.Clicked.AddHandler(__self, temp_eb7.OnEvent);
             temp.SourceLineNumber = 115;
             temp.SourceFileName = "EMPLOYE/Accueil.ux";
             temp1.SourceLineNumber = 115;
@@ -47,7 +47,7 @@ public partial class Accueilemploye: Fuse.Controls.Panel
             __self.Bindings.Add(temp4);
             __self.Bindings.Add(temp5);
             __self.Bindings.Add(temp6);
-            __self.Bindings.Add(temp_eb6);
+            __self.Bindings.Add(temp_eb7);
             return __self;
         }
         static global::Uno.UX.Selector __selector0 = "Title";
@@ -56,11 +56,11 @@ public partial class Accueilemploye: Fuse.Controls.Panel
     }
     global::Uno.UX.Property<object> temp_Items_inst;
     [global::Uno.UX.UXGlobalResource("Qreader")] public static readonly Qreader Qreader;
-    internal global::Fuse.Reactive.EventBinding temp_eb5;
+    internal global::Fuse.Reactive.EventBinding temp_eb6;
     global::Uno.UX.NameTable __g_nametable;
     static string[] __g_static_nametable = new string[] {
         "router",
-        "temp_eb5"
+        "temp_eb6"
     };
     static Accueilemploye()
     {
@@ -100,7 +100,7 @@ public partial class Accueilemploye: Fuse.Controls.Panel
         var temp19 = new global::Fuse.Controls.Text();
         var temp20 = new global::Fuse.Gestures.Clicked();
         var temp21 = new global::Fuse.Triggers.Actions.Callback();
-        temp_eb5 = new global::Fuse.Reactive.EventBinding(temp1);
+        temp_eb6 = new global::Fuse.Reactive.EventBinding(temp1);
         var temp22 = new global::Fuse.Controls.Text();
         var temp23 = new Template(this, this);
         var temp24 = new global::Fuse.Reactive.DataBinding(temp_Items_inst, temp3, Fuse.Reactive.BindingMode.Default);
@@ -192,10 +192,10 @@ public partial class Accueilemploye: Fuse.Controls.Panel
         temp20.SourceLineNumber = 107;
         temp20.SourceFileName = "EMPLOYE/Accueil.ux";
         temp20.Actions.Add(temp21);
-        temp20.Bindings.Add(temp_eb5);
+        temp20.Bindings.Add(temp_eb6);
         temp21.SourceLineNumber = 108;
         temp21.SourceFileName = "EMPLOYE/Accueil.ux";
-        temp21.Handler += temp_eb5.OnEvent;
+        temp21.Handler += temp_eb6.OnEvent;
         temp1.SourceLineNumber = 108;
         temp1.SourceFileName = "EMPLOYE/Accueil.ux";
         temp22.Value = "Commandes en attentes";
@@ -211,7 +211,7 @@ public partial class Accueilemploye: Fuse.Controls.Panel
         temp3.SourceFileName = "EMPLOYE/Accueil.ux";
         __g_nametable.This = this;
         __g_nametable.Objects.Add(router);
-        __g_nametable.Objects.Add(temp_eb5);
+        __g_nametable.Objects.Add(temp_eb6);
         this.Background = Fuse.Drawing.Brushes.White;
         this.Children.Add(temp4);
         this.Children.Add(temp5);

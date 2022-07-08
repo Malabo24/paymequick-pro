@@ -52,8 +52,12 @@
 
 						// on pousse vers l'accueil employé
 						if (data.type == "marchand"){
+							email.value = "";
+							password.value = "";
 							router.push("AdminAccueil", data);
 						} else {
+							email.value = "";
+							password.value = "";
 							router.push("AccueilEmploye", data);
 						}
 					})
@@ -84,13 +88,13 @@
 		<Image File="Assets/Images/bg.png" StretchMode="UniformToFill" Layer="Background" />
 		<StackPanel Alignment="Bottom" Margin="5">
 			<Circle Size="80" Fill="White" Padding="10" Margin="10,10,10,50">
-				<ImageFill File="Assets/Images/logo.png"  StretchMode="UniformToFill" />	
+				<ImageFill File="Assets/Images/pro.png"  StretchMode="UniformToFill" />	
 			</Circle>
 			
-			<Rectangle Height="330" Width="100%" CornerRadius="5" Fill="#000" Alignment="Bottom">
+			<Rectangle Height="335" Width="100%" CornerRadius="5" Fill="#000" Alignment="Bottom">
 
 				<StackPanel ItemSpacing="10" Margin="10,30,10,0">
-					<Text Value="Entrer vos informations d'identifications pour vous connecter" TextColor="White" TextAlignment="Center" Alignment="VerticalCenter" TextWrapping="Wrap" Margin="20,0" />
+					<Text Value="Entrer vos informations d'identifications pour vous connecter" TextColor="White" TextAlignment="Center" Alignment="VerticalCenter" TextWrapping="Wrap" Margin="10,0" />
           <TextInput PlaceholderText="Adresse Email" InputHint="Email" PlaceholderColor="White" TextColor="White" Padding="10" Value="{email}" >
             <Rectangle Height="50" Width="100%" CornerRadius="5">
               <Stroke Width="1" Color="#cc9c00" />

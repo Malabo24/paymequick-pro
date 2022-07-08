@@ -2,7 +2,60 @@
   <Router ux:Dependency="router" />
   <JavaScript>
     var Observable = require("FuseJS/Observable");
+    var Alerts = require("FuseJS/Alerts");
     var hikr = this.Parameter;
+
+    function confirmCancelCommand(){
+      Alerts.confirm("Annuler commande?", "Souhaitez vraiment annuler cette commande? Si vous le faite, ce client sera remboursé de l'intégralité de la commande.", "OUi", "non").then(function(x){
+        if (x){
+          // send data to server
+          fetch("https://payquick-develop.herokuapp.com/api/v2/merchant_app/cancelCommande", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            }, body: JSON.stringify{(
+              structure_toke: "",
+              commande_code: ""
+            )}
+          }).then(function(response){
+            if (response.status == 200){
+              return response.json().then(function(data){
+                console.log(JSON.stringify(data));
+              })
+            } else {
+
+            }
+          })
+          router.goto("AdminAccueil");
+        }
+      })
+    };
+
+    function confirmCommande(){
+      Alerts.confirm("Confirmer la commande?", "Souhaitez vraiment confirmer cette commande pour livraison? Si vous le faite, ce client sera notifié de la disponibilité de la commande.", "OUi, confirmer", "non").then(function(x){
+        if (x){
+          // send data to server
+          fetch("https://payquick-develop.herokuapp.com/api/v2/merchant_app/validateCommande", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            }, body: JSON.stringify{(
+              structure_toke: "",
+              commande_code: ""
+            )}
+          }).then(function(response){
+            if (response.status == 200){
+              return response.json().then(function(data){
+                console.log(JSON.stringify(data));
+              })
+            } else {
+
+            }
+          })
+          router.goto("AdminAccueil");
+        }
+      })
+    }
 
     function back(){
       router.goBack();
@@ -10,14 +63,25 @@
 
     module.exports = {
       hikr: hikr,
-      back: back
+      back: back,
+      confirmCancelCommand: confirmCancelCommand
     }
   </JavaScript>
+
+  <TextView ux:Class="TextViewer" TextWrapping="Wrap" Padding="4" Margin="4" TextColor="#000" CaretColor="#000">
+                  
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+      <Rectangle Layer="Background" CornerRadius="4">
+          <Stroke Color="#000" />
+      </Rectangle>
+
+  </TextView>
 
   <DockPanel>
     <StatusBarBackground Dock="Top" />
     <BottomBarBackground Dock="Bottom" />
-    <Android.StatusBarConfig IsVisible="true" Color="#0001" />
+    <Android.StatusBarConfig IsVisible="true" Color="#fff" />
     <Rectangle Height="50" Width="100%" Fill="White" Dock="Top">
       <Grid Columns="50,1*" CellSpacing="5">
         <Panel>
@@ -35,7 +99,7 @@
     <Panel ux:Name="confirmationDock" Visibility="Collapsed">
       <Rectangle Height="420" Width="100%" Alignment="Bottom" Fill="White" Margin="0,0,0,0" CornerRadius="5">
         <StackPanel Margin="10,10,10,10">
-          <Text Value="En confirmant cette commande, le client recevra un SMS de confirmation lui indiquant que sa commande est disponible." Margin="20,0" TextAlignment="Center" FontSize="15" TextWrapping="Wrap" />
+          <Text Value="En confirmant cette commande, le client recevra un SMS de confirmation." Margin="10,0" TextAlignment="Center" FontSize="15" TextWrapping="Wrap" />
           <Divider Margin="10,10" Opacity=".3" />
 
           <Grid Columns="50,1*" CellSpacing="5">
@@ -79,19 +143,50 @@
       </Rectangle>
     </Panel>
 
+    <!-- annuler -->
+    <Panel ux:Name="cancelDock" Visibility="Collapsed">
+      <Rectangle Height="300" Width="100%" Fill="White" CornerRadius="5" Alignment="Bottom">
+        <StackPanel Margin="10,20,10,0" ItemSpacing="20" >
+          <Text Value="Confirmer l'annulation de cette commande? Merci de fournir les raisons de l'annulations" TextWrapping="Wrap" />
+          <TextBox PlaceholderText="Saisir une raison justifiant votre annulation" MaxLength="50" MinHeight="100" TextWrapping="Wrap" >
+            <WhileContainsText>
+              <Change cancelBtn.Opacity="1" />
+            </WhileContainsText>
+          </TextBox>
+          <BouttonColors Titre="Confirmer l'annulation" BgCouleur="#d00000" TitreCouleur="#FFF" Margin="-10,20" ux:Name="cancelBtn" Opacity=".5" >
+            <Clicked>
+              <Callback Handler="{confirmCancelCommand}" />
+            </Clicked>
+          </BouttonColors>
+        </StackPanel>
+        <DropShadow />
+      </Rectangle>
+    </Panel>
+
     <Rectangle Height="100%" Width="100%" Fill="#0009" Visibility="Collapsed" ux:Name="bgFillDetail">
       <Clicked>
         <Hide TargetNode="confirmationDock" />
         <Hide TargetNode="bgFillDetail" />
+        <Hide TargetNode="cancelDock" />
       </Clicked>
     </Rectangle>
 
-    <BouttonBlack Titre="Confirmer cette commande" Alignment="Bottom" Margin="0,10">
-      <Clicked>
-        <Show TargetNode="confirmationDock" />
-        <Show TargetNode="bgFillDetail" />
-      </Clicked>
-    </BouttonBlack>
+    
+    <Grid ColumnCount="2">
+      <BouttonColors Titre="Confirmer" TitreCouleur="#fff" BgCouleur="#38b000" Alignment="Bottom" Margin="0,10">
+        <Clicked>
+          <Show TargetNode="confirmationDock" />
+          <Show TargetNode="bgFillDetail" />
+        </Clicked>
+      </BouttonColors>
+
+      <BouttonColors Titre="Annuler" TitreCouleur="#fff" BgCouleur="#d00000" Alignment="Bottom" Margin="0,10">
+        <Clicked>
+          <Show TargetNode="cancelDock" />
+          <Show TargetNode="bgFillDetail" />
+        </Clicked>
+      </BouttonColors>
+    </Grid>
 
     <ScrollView>
       <StackPanel Margin="10,10,10,10">
@@ -133,6 +228,25 @@
           </StackPanel>
         </Grid>
         <Divider Margin="10,10" Opacity=".3" />
+        <Text Value="Liste des produits commandés" Margin="10,10,10,10" TextAlignment="Center" FontSize="15" TextWrapping="Wrap" />
+        <Each Items="{hikr.produits}">
+          <Panel Margin="0,0,0,20">
+            <Grid Columns="50,1*" CellSpacing="5">
+              <Circle Size="50" Fill="White">
+                <ImageFill Url="{image}" StretchMode="UniformToFill" />
+              </Circle>
+              <StackPanel Alignment="VerticalCenter" ItemSpacing="10">
+                <Text Value="{produit}" />
+                <Grid ColumnCount="2" CellSpacing="5">
+                  <Text Value="Quantité : {quantite}" />
+                  <Text Value="Montant : {amount}" Margin="-20,0,0,0" />
+                </Grid>
+                
+              </StackPanel>
+            </Grid>
+            <Divider Margin="10,10" Opacity=".3" />
+          </Panel>
+        </Each>
       </StackPanel>
     </ScrollView>
   </DockPanel>

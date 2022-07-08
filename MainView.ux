@@ -8,8 +8,19 @@
 	<Rectangle Height="1" Margin="0,5" Opacity=".2" Width="100%" Fill="#000" />
 </Panel>
 
-<!-- creation d'un bouton noir -->
-<Panel ux:Class="BouttonBlack">
+	<!-- creation d'un bouton noir -->
+	<Panel ux:Class="BouttonColors">
+		<string ux:Property="Titre" />
+		<string ux:Property="BgCouleur" />
+		<string ux:Property="TitreCouleur" />
+		<Rectangle Width="100%" Height="50" Fill="{Property BgCouleur}" Margin="10,0" CornerRadius="5">
+			<Text Value="{Property Titre}" TextColor="{Property TitreCouleur}" TextAlignment="Center" Alignment="VerticalCenter" />
+			<!-- <Stroke Width="1" Color="#fff" /> -->
+		</Rectangle>
+	</Panel>
+
+	<!-- creation d'un bouton noir -->
+	<Panel ux:Class="BouttonBlack">
 		<string ux:Property="Titre" />
 		<Rectangle Width="100%" Height="50" Fill="#000" Margin="10,0" CornerRadius="5">
 			<Text Value="{Property Titre}" TextColor="#fff" TextAlignment="Center" Alignment="VerticalCenter" />

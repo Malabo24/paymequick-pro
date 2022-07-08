@@ -1,3 +1,33 @@
+sealed class PAYMEQUICKPRO_accessor_BouttonColors_BgCouleur: global::Uno.UX.PropertyAccessor
+{
+    public static global::Uno.UX.PropertyAccessor Singleton = new PAYMEQUICKPRO_accessor_BouttonColors_BgCouleur();
+    public override global::Uno.UX.Selector Name { get { return _name; } }
+    static global::Uno.UX.Selector _name = "BgCouleur";
+    public override global::Uno.Type PropertyType { get { return typeof(string); } }
+    public override object GetAsObject(global::Uno.UX.PropertyObject obj) { return ((global::BouttonColors)obj).BgCouleur; }
+    public override void SetAsObject(global::Uno.UX.PropertyObject obj, object v, global::Uno.UX.IPropertyListener origin) { ((global::BouttonColors)obj).SetBgCouleur((string)v, origin); }
+    public override bool SupportsOriginSetter { get { return true; } }
+}
+sealed class PAYMEQUICKPRO_accessor_BouttonColors_Titre: global::Uno.UX.PropertyAccessor
+{
+    public static global::Uno.UX.PropertyAccessor Singleton = new PAYMEQUICKPRO_accessor_BouttonColors_Titre();
+    public override global::Uno.UX.Selector Name { get { return _name; } }
+    static global::Uno.UX.Selector _name = "Titre";
+    public override global::Uno.Type PropertyType { get { return typeof(string); } }
+    public override object GetAsObject(global::Uno.UX.PropertyObject obj) { return ((global::BouttonColors)obj).Titre; }
+    public override void SetAsObject(global::Uno.UX.PropertyObject obj, object v, global::Uno.UX.IPropertyListener origin) { ((global::BouttonColors)obj).SetTitre((string)v, origin); }
+    public override bool SupportsOriginSetter { get { return true; } }
+}
+sealed class PAYMEQUICKPRO_accessor_BouttonColors_TitreCouleur: global::Uno.UX.PropertyAccessor
+{
+    public static global::Uno.UX.PropertyAccessor Singleton = new PAYMEQUICKPRO_accessor_BouttonColors_TitreCouleur();
+    public override global::Uno.UX.Selector Name { get { return _name; } }
+    static global::Uno.UX.Selector _name = "TitreCouleur";
+    public override global::Uno.Type PropertyType { get { return typeof(string); } }
+    public override object GetAsObject(global::Uno.UX.PropertyObject obj) { return ((global::BouttonColors)obj).TitreCouleur; }
+    public override void SetAsObject(global::Uno.UX.PropertyObject obj, object v, global::Uno.UX.IPropertyListener origin) { ((global::BouttonColors)obj).SetTitreCouleur((string)v, origin); }
+    public override bool SupportsOriginSetter { get { return true; } }
+}
 sealed class PAYMEQUICKPRO_accessor_BouttonBlack_Titre: global::Uno.UX.PropertyAccessor
 {
     public static global::Uno.UX.PropertyAccessor Singleton = new PAYMEQUICKPRO_accessor_BouttonBlack_Titre();
@@ -88,22 +118,13 @@ sealed class PAYMEQUICKPRO_accessor_WaitingProduct_Total: global::Uno.UX.Propert
     public override void SetAsObject(global::Uno.UX.PropertyObject obj, object v, global::Uno.UX.IPropertyListener origin) { ((global::WaitingProduct)obj).SetTotal((string)v, origin); }
     public override bool SupportsOriginSetter { get { return true; } }
 }
-sealed class PAYMEQUICKPRO_FuseControlsTextInputControl_Value_Property: Uno.UX.Property<string>
+sealed class PAYMEQUICKPRO_FuseControlsShape_Fill_Property: Uno.UX.Property<Fuse.Drawing.Brush>
 {
-    [Uno.WeakReference] readonly Fuse.Controls.TextInputControl _obj;
-    public PAYMEQUICKPRO_FuseControlsTextInputControl_Value_Property(Fuse.Controls.TextInputControl obj, global::Uno.UX.Selector name) : base(name) { _obj = obj; }
+    [Uno.WeakReference] readonly Fuse.Controls.Shape _obj;
+    public PAYMEQUICKPRO_FuseControlsShape_Fill_Property(Fuse.Controls.Shape obj, global::Uno.UX.Selector name) : base(name) { _obj = obj; }
     public override global::Uno.UX.PropertyObject Object { get { return _obj; } }
-    public override string Get(global::Uno.UX.PropertyObject obj) { return ((Fuse.Controls.TextInputControl)obj).Value; }
-    public override void Set(global::Uno.UX.PropertyObject obj, string v, global::Uno.UX.IPropertyListener origin) { ((Fuse.Controls.TextInputControl)obj).SetValue(v, origin); }
-    public override bool SupportsOriginSetter { get { return true; } }
-}
-sealed class PAYMEQUICKPRO_FuseTriggersWhileBool_Value_Property: Uno.UX.Property<bool>
-{
-    [Uno.WeakReference] readonly Fuse.Triggers.WhileBool _obj;
-    public PAYMEQUICKPRO_FuseTriggersWhileBool_Value_Property(Fuse.Triggers.WhileBool obj, global::Uno.UX.Selector name) : base(name) { _obj = obj; }
-    public override global::Uno.UX.PropertyObject Object { get { return _obj; } }
-    public override bool Get(global::Uno.UX.PropertyObject obj) { return ((Fuse.Triggers.WhileBool)obj).Value; }
-    public override void Set(global::Uno.UX.PropertyObject obj, bool v, global::Uno.UX.IPropertyListener origin) { ((Fuse.Triggers.WhileBool)obj).Value = v; }
+    public override Fuse.Drawing.Brush Get(global::Uno.UX.PropertyObject obj) { return ((Fuse.Controls.Shape)obj).Fill; }
+    public override void Set(global::Uno.UX.PropertyObject obj, Fuse.Drawing.Brush v, global::Uno.UX.IPropertyListener origin) { ((Fuse.Controls.Shape)obj).Fill = v; }
 }
 sealed class PAYMEQUICKPRO_FuseControlsTextControl_Value_Property: Uno.UX.Property<string>
 {
@@ -113,6 +134,14 @@ sealed class PAYMEQUICKPRO_FuseControlsTextControl_Value_Property: Uno.UX.Proper
     public override string Get(global::Uno.UX.PropertyObject obj) { return ((Fuse.Controls.TextControl)obj).Value; }
     public override void Set(global::Uno.UX.PropertyObject obj, string v, global::Uno.UX.IPropertyListener origin) { ((Fuse.Controls.TextControl)obj).SetValue(v, origin); }
     public override bool SupportsOriginSetter { get { return true; } }
+}
+sealed class PAYMEQUICKPRO_FuseControlsTextControl_TextColor_Property: Uno.UX.Property<float4>
+{
+    [Uno.WeakReference] readonly Fuse.Controls.TextControl _obj;
+    public PAYMEQUICKPRO_FuseControlsTextControl_TextColor_Property(Fuse.Controls.TextControl obj, global::Uno.UX.Selector name) : base(name) { _obj = obj; }
+    public override global::Uno.UX.PropertyObject Object { get { return _obj; } }
+    public override float4 Get(global::Uno.UX.PropertyObject obj) { return ((Fuse.Controls.TextControl)obj).TextColor; }
+    public override void Set(global::Uno.UX.PropertyObject obj, float4 v, global::Uno.UX.IPropertyListener origin) { ((Fuse.Controls.TextControl)obj).TextColor = v; }
 }
 sealed class PAYMEQUICKPRO_FuseControlsTextInput_PlaceholderText_Property: Uno.UX.Property<string>
 {
@@ -138,6 +167,23 @@ sealed class PAYMEQUICKPRO_FuseControlsTextInput_IsPassword_Property: Uno.UX.Pro
     public override bool Get(global::Uno.UX.PropertyObject obj) { return ((Fuse.Controls.TextInput)obj).IsPassword; }
     public override void Set(global::Uno.UX.PropertyObject obj, bool v, global::Uno.UX.IPropertyListener origin) { ((Fuse.Controls.TextInput)obj).IsPassword = v; }
 }
+sealed class PAYMEQUICKPRO_FuseControlsTextInputControl_Value_Property: Uno.UX.Property<string>
+{
+    [Uno.WeakReference] readonly Fuse.Controls.TextInputControl _obj;
+    public PAYMEQUICKPRO_FuseControlsTextInputControl_Value_Property(Fuse.Controls.TextInputControl obj, global::Uno.UX.Selector name) : base(name) { _obj = obj; }
+    public override global::Uno.UX.PropertyObject Object { get { return _obj; } }
+    public override string Get(global::Uno.UX.PropertyObject obj) { return ((Fuse.Controls.TextInputControl)obj).Value; }
+    public override void Set(global::Uno.UX.PropertyObject obj, string v, global::Uno.UX.IPropertyListener origin) { ((Fuse.Controls.TextInputControl)obj).SetValue(v, origin); }
+    public override bool SupportsOriginSetter { get { return true; } }
+}
+sealed class PAYMEQUICKPRO_FuseTriggersWhileBool_Value_Property: Uno.UX.Property<bool>
+{
+    [Uno.WeakReference] readonly Fuse.Triggers.WhileBool _obj;
+    public PAYMEQUICKPRO_FuseTriggersWhileBool_Value_Property(Fuse.Triggers.WhileBool obj, global::Uno.UX.Selector name) : base(name) { _obj = obj; }
+    public override global::Uno.UX.PropertyObject Object { get { return _obj; } }
+    public override bool Get(global::Uno.UX.PropertyObject obj) { return ((Fuse.Triggers.WhileBool)obj).Value; }
+    public override void Set(global::Uno.UX.PropertyObject obj, bool v, global::Uno.UX.IPropertyListener origin) { ((Fuse.Triggers.WhileBool)obj).Value = v; }
+}
 sealed class PAYMEQUICKPRO_FuseReactiveWhileCount_Items_Property: Uno.UX.Property<object>
 {
     [Uno.WeakReference] readonly Fuse.Reactive.WhileCount _obj;
@@ -153,6 +199,23 @@ sealed class PAYMEQUICKPRO_FuseReactiveEach_Items_Property: Uno.UX.Property<obje
     public override global::Uno.UX.PropertyObject Object { get { return _obj; } }
     public override object Get(global::Uno.UX.PropertyObject obj) { return ((Fuse.Reactive.Each)obj).Items; }
     public override void Set(global::Uno.UX.PropertyObject obj, object v, global::Uno.UX.IPropertyListener origin) { ((Fuse.Reactive.Each)obj).Items = v; }
+}
+sealed class PAYMEQUICKPRO_FuseElementsElement_Opacity_Property: Uno.UX.Property<float>
+{
+    [Uno.WeakReference] readonly Fuse.Elements.Element _obj;
+    public PAYMEQUICKPRO_FuseElementsElement_Opacity_Property(Fuse.Elements.Element obj, global::Uno.UX.Selector name) : base(name) { _obj = obj; }
+    public override global::Uno.UX.PropertyObject Object { get { return _obj; } }
+    public override float Get(global::Uno.UX.PropertyObject obj) { return ((Fuse.Elements.Element)obj).Opacity; }
+    public override void Set(global::Uno.UX.PropertyObject obj, float v, global::Uno.UX.IPropertyListener origin) { ((Fuse.Elements.Element)obj).SetOpacity(v, origin); }
+    public override bool SupportsOriginSetter { get { return true; } }
+}
+sealed class PAYMEQUICKPRO_FuseDrawingImageFill_Url_Property: Uno.UX.Property<string>
+{
+    [Uno.WeakReference] readonly Fuse.Drawing.ImageFill _obj;
+    public PAYMEQUICKPRO_FuseDrawingImageFill_Url_Property(Fuse.Drawing.ImageFill obj, global::Uno.UX.Selector name) : base(name) { _obj = obj; }
+    public override global::Uno.UX.PropertyObject Object { get { return _obj; } }
+    public override string Get(global::Uno.UX.PropertyObject obj) { return ((Fuse.Drawing.ImageFill)obj).Url; }
+    public override void Set(global::Uno.UX.PropertyObject obj, string v, global::Uno.UX.IPropertyListener origin) { ((Fuse.Drawing.ImageFill)obj).Url = v; }
 }
 sealed class PAYMEQUICKPRO_WaitingProduct_Title_Property: Uno.UX.Property<string>
 {
