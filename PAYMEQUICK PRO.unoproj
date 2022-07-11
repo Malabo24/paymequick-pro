@@ -35,6 +35,12 @@
     "Geo": {
       "ApiKey": "AIzaSyBwq-j0UKNNMQRu-S3uMuuiDboYhMlTnGc"
     },
+    "Key": {
+      "Alias": "application",
+      "AliasPassword": "Blackberry10",
+      "Store": "release.keystore",
+      "StorePassword": "Blackberry10"
+    },
     "Icons": {
       "LDPI": "Assets/Images/logo/36.jpg",
       "MDPI": "Assets/Images/logo/48.jpg",

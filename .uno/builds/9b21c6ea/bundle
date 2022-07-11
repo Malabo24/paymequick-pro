@@ -49,7 +49,7 @@ Fuse.UserEvents
 Fuse.WebSockets
 FuseJS
 fuse-qreader
-PAYMEQUICK PRO:Assets/Fonts/MaterialIcons-Regular.ttf:materialicons-regul-ea2ce943.ttf:Assets/Icons/arrow_forward.png:arrow_forward-36f48479.png:Assets/Icons/CompteBalance.png:comptebalance-5151d768.png:Assets/Icons/History.png:history-712ef72c.png:Assets/Icons/Pay.png:pay-c1ee4d06.png:Assets/Icons/store.png:store-a519a76f.png:Assets/Images/bg.png:bg-5e59f311.png:Assets/Images/bg.png:bg-5e59f311.png:Assets/Images/logo.png:logo-295e3607.png:Assets/Images/logo.png:logo-295e3607.png:Assets/Images/pic.jpg:pic-b426c0b4.jpg:Assets/Images/pic2.jpg:pic2-6e78d2dc.jpg
+PAYMEQUICK PRO:Assets/Fonts/MaterialIcons-Regular.ttf:materialicons-regul-ea2ce943.ttf:Assets/Icons/arrow_forward.png:arrow_forward-36f48479.png:Assets/Icons/CompteBalance.png:comptebalance-5151d768.png:Assets/Icons/History.png:history-712ef72c.png:Assets/Icons/Pay.png:pay-c1ee4d06.png:Assets/Icons/store.png:store-a519a76f.png:Assets/Images/bg.png:bg-5e59f311.png:Assets/Images/bg.png:bg-5e59f311.png:Assets/Images/logo.png:logo-295e3607.png:Assets/Images/logo.png:logo-295e3607.png:Assets/Images/pic.jpg:pic-b426c0b4.jpg:Assets/Images/pic2.jpg:pic2-6e78d2dc.jpg:Assets/Images/pro.png:pro-bddcb70d.png:Assets/Images/pro.png:pro-bddcb70d.png
 Polyfills.Window:js/EventTarget.js:eventtarget-c2230a48.js:js/fetch.js:fetch-bb921dd9.js:js/File.js:file-ffac368b.js:js/localStorage.js:localstorage-5815a0c9.js:js/WebSocketAPI.js:websocketapi-2132f288.js:js/Window.js:window-7fb232c1.js:js/WindowBase64.js:windowbase64-3a81b2e2.js:js/WindowTimers.js:windowtimers-6aa3303d.js:js/XMLHttpRequest.js:xmlhttprequest-28ec9821.js
 Uno.Collections
 Uno.Data.Json

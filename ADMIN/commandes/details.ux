@@ -13,10 +13,11 @@
             method: "POST",
             headers: {
               "Content-Type": "application/json"
-            }, body: JSON.stringify{(
+            }, 
+            body: JSON.stringify({
               structure_toke: "",
               commande_code: ""
-            )}
+            })
           }).then(function(response){
             if (response.status == 200){
               return response.json().then(function(data){
@@ -39,10 +40,10 @@
             method: "POST",
             headers: {
               "Content-Type": "application/json"
-            }, body: JSON.stringify{(
+            }, body: JSON.stringify({
               structure_toke: "",
               commande_code: ""
-            )}
+            })
           }).then(function(response){
             if (response.status == 200){
               return response.json().then(function(data){
@@ -104,7 +105,7 @@
 
           <Grid Columns="50,1*" CellSpacing="5">
             <Text Value="&#xe87c;" Font="Material" TextAlignment="Center" Alignment="VerticalCenter" FontSize="35" />
-            <StackPanel>
+            <StackPanel ItemSpacing="10">
               <Text Value="{hikr.client}" TextAlignment="Left" Alignment="VerticalCenter" />
               <Text Value="Client ayant passé la commande" FontSize="13" Opacity=".5" />
             </StackPanel>
@@ -113,7 +114,7 @@
 
           <Grid Columns="50,1*" CellSpacing="5">
             <Text Value="&#xe84f;" Font="Material" TextAlignment="Center" Alignment="VerticalCenter" FontSize="35" />
-            <StackPanel>
+            <StackPanel ItemSpacing="10">
               <Text Value="{hikr.amount}" TextAlignment="Left" Alignment="VerticalCenter" />
               <Text Value="Montant de la commande" FontSize="13" Opacity=".5" />
             </StackPanel>
@@ -122,7 +123,7 @@
 
           <Grid Columns="50,1*" CellSpacing="5">
             <Text Value="&#xe8d1;" Font="Material" TextAlignment="Center" Alignment="VerticalCenter" FontSize="35" />
-            <StackPanel>
+            <StackPanel ItemSpacing="10">
               <Text Value="{hikr.entreprise}" TextAlignment="Left" Alignment="VerticalCenter" />
               <Text Value="Point de vente/achat" FontSize="13" Opacity=".5" />
             </StackPanel>
@@ -131,7 +132,7 @@
 
           <Grid Columns="50,1*" CellSpacing="5">
             <Text Value="&#xe878;" Font="Material" TextAlignment="Center" Alignment="VerticalCenter" FontSize="35" />
-            <StackPanel>
+            <StackPanel ItemSpacing="10">
               <Text Value="{hikr.date_commande}" TextAlignment="Left" Alignment="VerticalCenter" />
               <Text Value="Date transaction achat" FontSize="13" Opacity=".5" />
             </StackPanel>
@@ -228,7 +229,7 @@
           </StackPanel>
         </Grid>
         <Divider Margin="10,10" Opacity=".3" />
-        <Text Value="Liste des produits commandés" Margin="10,10,10,10" TextAlignment="Center" FontSize="15" TextWrapping="Wrap" />
+        <Text Value="Liste des produits commandés" Margin="10,20" TextAlignment="Left" Font="Bold" FontSize="15" TextWrapping="Wrap" />
         <Each Items="{hikr.produits}">
           <Panel Margin="0,0,0,20">
             <Grid Columns="50,1*" CellSpacing="5">
@@ -236,7 +237,7 @@
                 <ImageFill Url="{image}" StretchMode="UniformToFill" />
               </Circle>
               <StackPanel Alignment="VerticalCenter" ItemSpacing="10">
-                <Text Value="{produit}" />
+                <Text Value="{produit}" Font="Bold" />
                 <Grid ColumnCount="2" CellSpacing="5">
                   <Text Value="Quantité : {quantite}" />
                   <Text Value="Montant : {amount}" Margin="-20,0,0,0" />

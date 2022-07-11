@@ -132,9 +132,9 @@
           <!-- <Blur Radius="1" /> -->
           <Rectangle Height="100" Width="100%" Margin="5,0,5,-40" Alignment="BottomCenter" CornerRadius="10" >
             <Grid ColumnCount="4" CellSpacing="5" Margin="5" Alignment="VerticalCenter">
-              <StackPanel ItemSpacing="5">
-                <Circle Height="55" Fill="#000" Alignment="Bottom" Opacity=".5">
-                  <Text Value="&#xea18;" FontSize="30" TextColor="#fff" Font="Material" TextAlignment="Center" Alignment="VerticalCenter" />
+              <StackPanel ItemSpacing="10">
+                <Circle Height="45" Fill="#000" Alignment="Bottom" Opacity=".5">
+                  <Text Value="&#xea18;" FontSize="20" TextColor="#fff" Font="Material" TextAlignment="Center" Alignment="VerticalCenter" />
                 </Circle>
                 <Text Value="VIREMENT" TextAlignment="Center" Alignment="VerticalCenter" FontSize="12" />
                 <Clicked>
@@ -143,30 +143,30 @@
                 </Clicked>
               </StackPanel>
 
-              <StackPanel ItemSpacing="5">
-                <Circle Height="55" Fill="#000" Alignment="Bottom" Opacity=".5">
-                  <Text Value="&#xe3dc;" FontSize="30" TextColor="#fff" Font="Material" TextAlignment="Center" Alignment="VerticalCenter" />
+              <StackPanel ItemSpacing="10">
+                <Circle Height="45" Fill="#000" Alignment="Bottom" Opacity=".5">
+                  <Text Value="&#xe3dc;" FontSize="20" TextColor="#fff" Font="Material" TextAlignment="Center" Alignment="VerticalCenter" />
                 </Circle>
                 <Text Value="PAYER" TextAlignment="Center" Alignment="VerticalCenter" FontSize="12" />
               </StackPanel>
 
-              <StackPanel ItemSpacing="5">
-                <Circle Height="55" Fill="#000" Alignment="Bottom" Opacity=".5">
-                  <Text Value="&#xf092;" FontSize="30" TextColor="#fff" Font="Material" TextAlignment="Center" Alignment="VerticalCenter" />
+              <StackPanel ItemSpacing="10">
+                <Circle Height="45" Fill="#000" Alignment="Bottom" Opacity=".5">
+                  <Text Value="&#xf092;" FontSize="20" TextColor="#fff" Font="Material" TextAlignment="Center" Alignment="VerticalCenter" />
                 </Circle>
                 <Text Value="STATS." TextAlignment="Center" Alignment="VerticalCenter" FontSize="12" />
               </StackPanel>
 
-              <StackPanel ItemSpacing="5">
-                <Circle Height="55" Fill="#000" Alignment="Bottom" Opacity=".5">
-                  <Text Value="&#xe923;"  FontSize="30" TextColor="#fff" Font="Material" TextAlignment="Center" Alignment="VerticalCenter" />
+              <StackPanel ItemSpacing="10">
+                <Circle Height="45" Fill="#000" Alignment="Bottom" Opacity=".5">
+                  <Text Value="&#xe923;"  FontSize="20" TextColor="#fff" Font="Material" TextAlignment="Center" Alignment="VerticalCenter" />
                 </Circle>
                 <Text Value="Historique" TextAlignment="Center" Alignment="VerticalCenter" FontSize="12" />
               </StackPanel>
               
             </Grid>
             <Rectangle Height="100%" Width="100%" Fill="#fff" CornerRadius="10" />
-            <DropShadow />
+            <!-- <DropShadow /> -->
           </Rectangle>
         </Image>
 
